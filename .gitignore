@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+incident_logs.csv
+static/alerts/
+yolov8n.pt

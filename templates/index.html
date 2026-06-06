@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Surveillance Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Smart Public Safety & Surveillance</h1>
+
+<div class="container">
+    <div class="video-section">
+        <h2>Live CCTV Feed</h2>
+        <img src="{{ url_for('video') }}" width="700">
+    </div>
+
+    <div class="log-section">
+        <h2>Incident Logs</h2>
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Alert</th>
+            </tr>
+            {% for log in logs %}
+            <tr>
+                <td>{{ log[0] }}</td>
+                <td>{{ log[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
